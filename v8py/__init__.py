@@ -1,8 +1,10 @@
-from _v8py import *
-
-from .debug import Debugger, DebuggerError
 try:
-    from gevent import monkey;monkey.patch_all()
+    from gevent import monkey
+    monkey.patch_all()
+    
+    from _v8py import *
+    from .debug import Debugger, DebuggerError
+    
     import geventwebsocket
     import greenstack
 except ImportError:
